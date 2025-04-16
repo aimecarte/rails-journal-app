@@ -1,0 +1,26 @@
+<%= form_with model: [ category, task ] do |form| %>
+    <fieldset>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </fieldset>
+
+    <fieldset>
+        <%= form.label :description %>
+        <%= form.text_field :description %>
+    </fieldset>
+
+    <fieldset>
+        <%= form.label :due_date %>
+        <%= form.date_field :due_date, min: Date.today %>
+    </fieldset>
+
+    <fieldset>
+        <%= form.label :completed %>
+        <%= form.check_box :completed %>
+    </fieldset>
+
+    <%= form.submit %>
+    <% task.errors.full_messages.each do |msg| %>
+        <p class="pico-background-red-500"><%= msg %></p>
+    <% end %>
+<% end %>

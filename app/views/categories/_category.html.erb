@@ -1,0 +1,8 @@
+<% if category.persisted? %>
+<p>
+    <%= category.name %> 
+    <%= link_to "show tasks", category %> 
+    <%= link_to "delete", category_path(category), data: {turbo_method: :delete} %>
+    <%= link_to "edit", edit_category_path(category) %> 
+</p>
+<% end %>

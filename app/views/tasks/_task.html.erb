@@ -1,0 +1,8 @@
+<% if task.persisted? %>
+<p>
+    <%= task.name %> : <%= task.description %>
+    <%= link_to "show", category_task_path(task.category, task) %>
+    <%= link_to "edit", edit_category_task_path(task.category, task) %>
+    <%= link_to "delete", category_task_path(task.category, task), data: { turbo_method: :delete } %>
+</p>
+<% end %>

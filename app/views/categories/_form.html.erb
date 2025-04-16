@@ -1,0 +1,12 @@
+<%= form_with model: category do |form| %>
+    <fieldset>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </fieldset>
+    <fieldset>
+        <%= form.submit %>
+    </fieldset>
+    <% category.errors.full_messages_for(:name).each do |msg| %>
+        <p class="pico-background-red-500"><%= msg %></p>
+    <% end %>
+<% end %>

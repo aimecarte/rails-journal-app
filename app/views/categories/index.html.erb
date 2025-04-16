@@ -1,0 +1,15 @@
+<h1>Your categories</h1>
+<% @categories&.each do |category| %>
+    <%= render 'category', category: category %>
+<% end %>
+
+<h1>Add a new category</h1>
+<%= render 'form', category: @category %>
+
+<h1>Today tasks</h1>
+<% if @today&.count == 0 %>
+    <p>No task</p>
+<% end %>
+<% @today&.each do |task| %>
+    <%= render 'tasks/task', task: task %>
+<% end %>

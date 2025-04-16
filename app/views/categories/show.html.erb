@@ -1,0 +1,10 @@
+<h1><%= @category.name %> tasks</h1>
+
+<% if @tasks&.count == 0 %>
+  <p>No tasks</p>
+<% else %>
+  <%= render @category.tasks %>
+<% end %>
+
+<h1>Add a new <%= @category.name %> task</h1>
+<%= render 'tasks/form', task: @task, category: @category %>
