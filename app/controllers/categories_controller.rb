@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class CategoriesController < AuthenticatedController
   before_action :set_category_id, except: [ :index, :create ]
 
   rescue_from ActiveRecord::RecordNotFound, with: :no_record_found

@@ -1,4 +1,4 @@
-class TasksController < ApplicationController
+class TasksController < AuthenticatedController
   before_action :set_category_id
   before_action :set_task_id, except: :create
 
